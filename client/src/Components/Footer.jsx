@@ -1,115 +1,102 @@
 import React from "react";
-import { FaYoutube, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaYoutube, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiGooglechrome } from "react-icons/si";
 
 const Footer = () => {
-  return (
-    <footer className="w-full bg-[#f3f8ff] px-6 py-10 text-[#1a2b6d]">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+    const currentYear = new Date().getFullYear();
 
-        {/* Left Section - Logo + About */}
-        <div className="md:w-[30%] self-start">
-          <a
-            href="/"
-            className="flex items-center space-x-1 hover:opacity-90 transition-opacity"
-          >
-            <h2 className="text-2xl font-bold">
-              <span className="text-[#1a50b3]">JSON</span> Format
-            </h2>
-          </a>
-          <p className="mt-3 bg-white shadow-sm p-3 rounded-lg leading-relaxed text-[15px] text-gray-700">
-            JSON-Format is a fast, user-friendly tool to format, validate, and beautify JSON data.
-            Instantly check for errors and ensure clean, optimized JSON code.
-          </p>
-        </div>
+    return (
+        <footer className="w-full bg-[#f3f8ff] px-6 py-10 text-[#1a2b6d] border-t border-gray-200" aria-labelledby="footer-heading">
+            <h2 id="footer-heading" className="sr-only">Footer Navigation for JSON Parser</h2>
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
 
-        {/* Center Section */}
-        <div className="flex flex-col items-center text-center flex-1">
-          <p>
-            Write to us @{" "}
-            <a href="mailto:info@json-format.com" className="text-[#1a50b3] font-medium">
-              info@json-format.com
-            </a>
-          </p>
+                {/* Left Section - Branding, About, and Contact */}
+                <div className="md:w-[35%] self-start">
+                    <a
+                        href="/"
+                        className="flex items-center space-x-1 hover:opacity-90 transition-opacity"
+                    >
+                        <h2 className="text-2xl font-extrabold" title="JSON Parser - Online JSON Formatter and Validator">
+                            <span className="text-[#1a50b3]">JSON</span> PARSER
+                        </h2>
+                    </a>
+                    <p className="mt-4 text-sm leading-relaxed text-gray-700">
+                        JSON Parser is your all-in-one online tool to <strong>format, validate, and beautify JSON data</strong>. Quickly detect errors, convert JSON to <strong>XML or YAML</strong>, and make your code clean, readable, and ready for web or API projects. Ideal for developers, testers, and students who want optimized JSON instantly.
+                    </p>
 
-          <p className="mt-3 font-semibold">Follow us :</p>
-          <div className="flex justify-center gap-6 my-3">
-            <a
-              href="https://www.youtube.com/@JsonFormat-w8z"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#eaf1ff] p-2 rounded-full hover:scale-110 transition-transform"
-              title="YouTube"
-            >
-              <FaYoutube size={26} className="text-[#1a50b3]" />
-            </a>
-            <a
-              href="https://x.com/json_format"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#eaf1ff] p-2 rounded-full hover:scale-110 transition-transform"
-              title="Twitter"
-            >
-              <FaTwitter size={26} className="text-[#1a50b3]" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/json-format-page"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#eaf1ff] p-2 rounded-full hover:scale-110 transition-transform"
-              title="LinkedIn"
-            >
-              <FaLinkedin size={26} className="text-[#1a50b3]" />
-            </a>
-          </div>
+                    {/* Write to us */}
+                    <p className="mt-8">
+                        Write to us @{" "}
+                        <a href="mailto:info@json-format.com" className="text-[#1a50b3] font-medium">
+                            info@json-format.com
+                        </a>
+                    </p>
+                </div>
 
+                {/* Center Section - JSON Tools */}
+                <div className="md:w-[25%]">
+                    <h3 className="text-lg font-bold text-[#1a50b3] mb-4">JSON Tools</h3>
+                    <nav aria-label="JSON Utility Links">
+                        <ul className="space-y-2 text-sm font-medium">
+                            <li><a href="/json-parser" title="Parse JSON Online" className="hover:underline">JSON Parser</a></li>
+                            <li><a href="/json-validator" title="Validate JSON Online" className="hover:underline">JSON Validator</a></li>
+                            <li><a href="/json-beautifier" title="Beautify JSON Code Online" className="hover:underline">JSON Beautifier</a></li>
+                            <li><a href="/api-testing-tool" title="Test JSON APIs" className="hover:underline">API Testing Tool</a></li>
+                            <li><a href="/blog" title="JSON Parser Blog - Tutorials & Tips" className="hover:underline">JSON Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
+                {/* Right Section - Company Links and Social */}
+                <div className="md:w-[20%]">
+                    <h3 className="text-lg font-bold text-[#1a50b3] mb-4">Company & Connect</h3>
+                    <nav aria-label="Company Links">
+                        <ul className="space-y-2 text-sm font-medium mb-6">
+                            <li><a href="/about" title="About JSON Parser Tool" className="hover:underline">About JSON Parser</a></li>
+                            <li><a href="/contact" title="Contact JSON Parser Team" className="hover:underline">Contact Us</a></li>
+                            <li className="flex items-center gap-1">
+                                <SiGooglechrome size={18} /> 
+                                <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer" title="JSON Parser Chrome Extension" className="hover:underline">
+                                    Chrome Extension
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-1">
+                                <FaGithub size={18} /> 
+                                <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" title="JSON Parser GitHub Repository" className="hover:underline">
+                                    GitHub Repository
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
 
-          <p className="font-semibold">Our Products</p>
-          <div className="flex items-center justify-center gap-2 mt-2">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png"
-              alt="Chrome"
-              className="w-8 h-8"
-            />
-            <a
-              href="https://chrome.google.com/webstore"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1a2b6d] font-medium hover:underline"
-            >
-              Chrome Extension
-            </a>
-          </div>
+                    {/* Social Links */}
+                    <p className="font-semibold text-sm mt-3 mb-2">
+                        Stay Updated with JSON Parser:
+                    </p>
+                    <div className="flex gap-4">
+                        <a href="https://x.com/json_format" target="_blank" rel="noopener noreferrer" title="Follow JSON Parser on X" className="text-[#1a50b3] hover:text-blue-700 transition-colors"><FaTwitter size={24} /></a>
+                        <a href="https://www.linkedin.com/company/json-format-page" target="_blank" rel="noopener noreferrer" title="Follow JSON Parser on LinkedIn" className="text-[#1a50b3] hover:text-blue-700 transition-colors"><FaLinkedin size={24} /></a>
+                        <a href="https://www.youtube.com/@JsonFormat-w8z" target="_blank" rel="noopener noreferrer" title="Subscribe to JSON Parser YouTube Channel" className="text-[#1a50b3] hover:text-red-600 transition-colors"><FaYoutube size={24} /></a>
+                        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" title="JSON Parser GitHub Repository" className="text-[#1a50b3] hover:text-gray-800 transition-colors"><FaGithub size={24} /></a>
+                    </div>
+                </div>
+            </div>
 
-
-
-          <p className="text-[#002fff] mt-3 font-medium">
-            Latest Release Version: <span className="font-bold">11.0</span>
-          </p>
-        </div>
-
-        {/* Right Section */}
-        <div className="md:w-1/4 text-left">
-          <h3 className="text-lg font-bold text-[#1a50b3] mb-2">BLOG</h3>
-          <ul className="space-y-2 font-medium">
-            <li className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-[#6a5acd] rounded-full"></span> Basics
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-[#ff8c00] rounded-full"></span> Features
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-[#ff4500] rounded-full"></span> Releases
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-[#3cb371] rounded-full"></span> Resources
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  );
+            {/* Legal and Copyright */}
+            <div className="mt-10 pt-5 border-t border-gray-300">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 space-y-3 md:space-y-0">
+                    <p className="order-2 md:order-1">&copy; {currentYear} JSON PARSER. All rights reserved. Format, validate, and beautify your JSON online for free.</p>
+                    <nav aria-label="Legal Links" className="order-1 md:order-2">
+                        <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                            <li><a href="/privacy-policy" title="JSON Parser Privacy Policy" className="hover:underline">Privacy Policy</a></li>
+                            <li><a href="/terms-of-service" title="JSON Parser Terms of Service" className="hover:underline">Terms of Service</a></li>
+                            <li><a href="/disclaimer" title="JSON Parser Disclaimer" className="hover:underline">Disclaimer</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;
